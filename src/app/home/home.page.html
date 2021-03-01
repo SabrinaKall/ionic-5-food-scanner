@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-button (click)="scan()">Go to product detail</ion-button>
+    <ion-grid>
+      <ion-col></ion-col>
+      <ion-col width-20>Name</ion-col>
+      <ion-col width-20>Barcode</ion-col>
+      <ion-col width-20>Image</ion-col>
+
+      <ion-row *ngFor="let item of previouslyViewedItems | keyvalue">
+        <ion-col>{{item.value.name}}</ion-col>
+        <ion-col width-20>{{item.value.barcode}}</ion-col>
+        <ion-col width-20>{{item.value.image}}</ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-content>

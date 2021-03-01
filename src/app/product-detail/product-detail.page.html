@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="product">ProductDetail: {{product.display_name_translations.de}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="product">
+  <br><br>
+  <h2>Images</h2>
+
+  <ion-slides *ngFor="let image of product.images | keyvalue">
+    <ion-slide pager=true><ion-img [src]=image.value.medium></ion-img></ion-slide>
+  </ion-slides>
+
+  <br><br>
+
+  <h2>N&auml;hrwerte</h2>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col width-20>100g</ion-col>
+      <ion-col width-20>Portion</ion-col>
+      <ion-col width-20>Per day</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of product.nutrients | keyvalue">
+      <ion-col>{{item.value.name_translations.de}}</ion-col>
+      <ion-col width-20>{{item.value.per_hundred}}</ion-col>
+      <ion-col width-20>{{item.value.per_portion}}</ion-col>
+      <ion-col width-20>{{item.value.per_day}}</ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,13 @@
+{
+  "appId": "ch.ti8m.academy.ionic.ksa",
+  "appName": "FoodScanner",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
